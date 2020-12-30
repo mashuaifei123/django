@@ -1,0 +1,2497 @@
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+2M003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-31
+
+良好
+
+检查号Check No.：BM20200110014
+
+总数
+Total
+
+200
+
+(%)
+
+粒红比G / E Ratio
+
+1.84:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+7
+9
+
+45
+18
+
+2
+1
+
+3.50
+
+4.50
+22.50
+
+9.00
+1.00
+
+0.50
+
+100X
+
+1
+
+0.50
+
+1
+
+8
+36
+
+0.50
+4.00
+
+18.00
+
+1000X
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生活跃，各阶段细胞分化比例
+大致正常，成熟红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+70
+
+35.00
+
+2
+
+1.00
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+                                                                                                                                                                 专题编号： study 
+
+表五 食蟹猴皮下注射给予 GR1501 26 周重复给药毒性试验 
+体温统计数据 
+
+                                                                                                                                                                 专题编号： study 
+
+试验日期 
+
+P4(N=5) 
+
+P10(N=5) 
+
+D14(N=5) 
+
+R1(N=5) 
+
+R42(N=2) 
+
+体温(℃)统计汇总（mean±SD）Males 雄性 
+辅料对照组 
+
+GR1501 低剂量组 
+
+GR1501 中剂量组 
+
+GR1501 高剂量组 
+
+（0 mg/kg） 
+
+（15 mg/kg） 
+
+（50 mg/kg） 
+
+（150 mg/kg） 
+
+36.64±0.24 
+
+36.48±0.18 
+
+36.54±0.21 
+
+36.54±0.17 
+
+36.45±0.21 
+
+36.66±0.09 
+
+36.56±0.18 
+
+36.48±0.22 
+
+36.54±0.18 
+
+36.80±0.00 
+
+36.50±0.19 
+
+36.58±0.19 
+
+36.42±0.15 
+
+36.72±0.15 
+
+36.65±0.07 
+
+36.50±0.16 
+
+36.66±0.21 
+
+36.56±0.19 
+
+36.70±0.16 
+
+36.45±0.21 
+
+                                                                                                                                                                 专题编号： study 
+
+表六 食蟹猴皮下注射给予 GR1501 26 周重复给药毒性试验 
+呼吸统计数据 
+
+                                                                                                                                                                 专题编号： study 
+
+呼吸参数 
+
+试验日期 
+
+辅料对照组 
+
+GR1501 低剂量组 
+
+GR1501 中剂量组 
+
+GR1501 高剂量组 
+
+（0 mg/kg） 
+
+（15 mg/kg） 
+
+（50 mg/kg） 
+
+（150 mg/kg） 
+
+呼吸统计汇总（mean±SD）Females 雄性 
+
+呼吸频率 
+（次/分）R1) 
+
+呼吸幅度（g）R1) 
+
+P3(N=5) 
+
+P9(N=5) 
+
+D14(N=5) 
+
+R1(N=5) 
+
+R42(N=2) 
+
+P3(N=5) 
+
+P9(N=5) 
+
+D14(N=5) 
+
+R1(N=5) 
+
+R42(N=2) 
+
+51±15 
+
+57±17 
+
+47±15 
+
+48±15 
+
+46±19 
+
+165.98±77.71 
+
+217.40±32.18 
+
+300.86±97.54 
+
+188.10±98.17 
+
+167.50±46.81 
+
+42±6 
+
+48±5 
+
+36±5 
+
+40±10 
+
+42±6 
+
+188.76±89.16 
+
+264.46±115.52 
+
+207.04±143.90 
+
+225.40±109.85 
+
+214.30±148.07 
+
+55±7 
+
+60±8 
+
+47±6 
+
+44±8 
+
+48±1 
+
+199.92±91.60 
+
+265.20±83.12 
+
+187.26±82.36 
+
+189.02±68.98 
+
+99.30±12.02 
+
+48±4 
+
+57±9 
+
+45±7 
+
+44±5 
+
+36±1 
+
+188.72±26.33 
+
+262.74±99.61 
+
+210.46±26.78 
+
+218.02±48.84 
+
+119.65±15.06 
+
+﹊﹋﹌
+
+机器编号:
+
+499099660821
+
+湖北增值税电子普通发票
+
+发票代码:
+
+发票号码:
+
+开票日期:
+
+校 验 码:
+
+042001700112
+07007198
+2018年03月23日
+12636 66602 23329 27910
+
+购
+
+买
+
+方
+
+名　　　　称:
+
+武汉市车城物流有限公司
+
+纳税人识别号:
+
+914201007483062457
+
+地 址、
+电 话:
+
+武汉经济技术开发区车城大道7号 84289348
+
+开户行及账号:
+
+中国农业银行股份有限公司武汉开发区支行 17-071201040004598
+
+密
+
+码
+
+区
+
+0 3 0 2 4 3 3 1 9 > 1 * + 9 * 2 3 9 + > < / < 5 9 + 3 -
+7 8 6 - 6 4 6 / 1 6 < 2 4 8 > / - 0 2 9 0 2 9 > 7 4 6 *
+7 > 4 4 < 9 7 * 9 2 9 3 7 9 6 7 7 - 9 5 5 3 1 5 > * + -
+6 / 5 3 < 1 3 + 8 * 0 1 0 3 6 9 1 9 4 5 6 5 > - 5 / 0 4
+
+项目名称
+*经营租赁*通行费
+
+车牌号
+
+类型 通行日期起 通行日期止
+
+金　额
+
+税率
+
+税　额
+
+鄂AHG248
+
+货车 20180212
+
+20180212
+
+286.23
+
+3%
+
+8.59
+
+合
+
+计
+
+价税合计（大写）
+
+贰佰玖拾肆元捌角贰分
+
+名　　　　称:
+纳税人识别号:
+
+湖北随岳南高速公路有限公司
+
+91420000753416406R
+
+地 址、
+电 话:
+
+武汉市经济开发区17C1地块东合中心B栋1601号027-83458755
+
+开户行及账号:
+
+民生银行武汉沌口支行0514014170001889
+
+销
+
+售
+
+方
+
+备
+
+注
+
+￥286.23
+
+￥8.59
+
+（小写）
+
+￥294.82
+
+收 款 人:
+
+龙梦媱
+
+复 核:
+
+陈煜
+
+开 票 人:
+
+尹晨
+
+销 售 方:（章）
+
+﹊﹋﹌
+
+机器编号:
+
+499099660821
+
+湖北增值税电子普通发票
+
+发票代码:
+
+发票号码:
+
+开票日期:
+
+校 验 码:
+
+042001700112
+07007198
+2018年03月23日
+12636 66602 23329 27910
+
+购
+
+买
+
+方
+
+名　　　　称:
+
+武汉市车城物流有限公司
+
+纳税人识别号:
+
+914201007483062457
+
+地 址、
+电 话:
+
+武汉经济技术开发区车城大道7号 84289348
+
+开户行及账号:
+
+中国农业银行股份有限公司武汉开发区支行 17-071201040004598
+
+密
+
+码
+
+区
+
+0 3 0 2 4 3 3 1 9 > 1 * + 9 * 2 3 9 + > < / < 5 9 + 3 -
+7 8 6 - 6 4 6 / 1 6 < 2 4 8 > / - 0 2 9 0 2 9 > 7 4 6 *
+7 > 4 4 < 9 7 * 9 2 9 3 7 9 6 7 7 - 9 5 5 3 1 5 > * + -
+6 / 5 3 < 1 3 + 8 * 0 1 0 3 6 9 1 9 4 5 6 5 > - 5 / 0 4
+
+项目名称
+*经营租赁*通行费
+
+车牌号
+
+类型 通行日期起 通行日期止
+
+金　额
+
+税率
+
+税　额
+
+鄂AHG248
+
+货车 20180212
+
+20180212
+
+286.23
+
+3%
+
+8.59
+
+合
+
+计
+
+价税合计（大写）
+
+贰佰玖拾肆元捌角贰分
+
+名　　　　称:
+纳税人识别号:
+
+湖北随岳南高速公路有限公司
+
+91420000753416406R
+
+地 址、
+电 话:
+
+武汉市经济开发区17C1地块东合中心B栋1601号027-83458755
+
+开户行及账号:
+
+民生银行武汉沌口支行0514014170001889
+
+销
+
+售
+
+方
+
+备
+
+注
+
+￥286.23
+
+￥8.59
+
+（小写）
+
+￥294.82
+
+收 款 人:
+
+龙梦媱
+
+复 核:
+
+陈煜
+
+开 票 人:
+
+尹晨
+
+销 售 方:（章）
+
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+2M003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-31
+
+良好
+
+检查号Check No.：BM20200110014
+
+总数
+Total
+
+200
+
+(%)
+
+粒红比G / E Ratio
+
+1.84:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+7
+9
+
+45
+18
+
+2
+1
+
+3.50
+
+4.50
+22.50
+
+9.00
+1.00
+
+0.50
+
+100X
+
+1
+
+0.50
+
+1
+
+8
+36
+
+0.50
+4.00
+
+18.00
+
+1000X
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生活跃，各阶段细胞分化比例
+大致正常，成熟红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+70
+
+35.00
+
+2
+
+1.00
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+3F003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-30
+
+良好
+
+检查号Check No.：BM20200110017
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+总数
+Total
+
+200
+
+1
+4
+
+7
+14
+
+37
+10
+
+2
+
+1
+
+1
+
+2
+
+12
+40
+
+(%)
+
+粒红比G / E Ratio
+
+1.43:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+活跃
+
+100X
+
+0.50
+
+2.00
+3.50
+
+7.00
+18.50
+
+5.00
+1.00
+
+0.50
+0.50
+
+1.00
+6.00
+
+20.00
+
+1000X
+
+68
+
+34.00
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生较活跃，以晚幼红细胞增生
+为主，红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+1
+
+0.50
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+3F003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-30
+
+良好
+
+检查号Check No.：BM20200110017
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+总数
+Total
+
+200
+
+1
+4
+
+7
+14
+
+37
+10
+
+2
+
+1
+
+1
+
+2
+
+12
+40
+
+(%)
+
+粒红比G / E Ratio
+
+1.43:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+活跃
+
+100X
+
+0.50
+
+2.00
+3.50
+
+7.00
+18.50
+
+5.00
+1.00
+
+0.50
+0.50
+
+1.00
+6.00
+
+20.00
+
+1000X
+
+68
+
+34.00
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生较活跃，以晚幼红细胞增生
+为主，红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+1
+
+0.50
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+3F003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-30
+
+良好
+
+检查号Check No.：BM20200110017
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+总数
+Total
+
+200
+
+1
+4
+
+7
+14
+
+37
+10
+
+2
+
+1
+
+1
+
+2
+
+12
+40
+
+(%)
+
+粒红比G / E Ratio
+
+1.43:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+活跃
+
+100X
+
+0.50
+
+2.00
+3.50
+
+7.00
+18.50
+
+5.00
+1.00
+
+0.50
+0.50
+
+1.00
+6.00
+
+20.00
+
+1000X
+
+68
+
+34.00
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生较活跃，以晚幼红细胞增生
+为主，红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+1
+
+0.50
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+2M003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-31
+
+良好
+
+检查号Check No.：BM20200110014
+
+总数
+Total
+
+200
+
+(%)
+
+粒红比G / E Ratio
+
+1.84:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+7
+9
+
+45
+18
+
+2
+1
+
+3.50
+
+4.50
+22.50
+
+9.00
+1.00
+
+0.50
+
+100X
+
+1
+
+0.50
+
+1
+
+8
+36
+
+0.50
+4.00
+
+18.00
+
+1000X
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生活跃，各阶段细胞分化比例
+大致正常，成熟红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+70
+
+35.00
+
+2
+
+1.00
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+3F003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-30
+
+良好
+
+检查号Check No.：BM20200110017
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+总数
+Total
+
+200
+
+1
+4
+
+7
+14
+
+37
+10
+
+2
+
+1
+
+1
+
+2
+
+12
+40
+
+(%)
+
+粒红比G / E Ratio
+
+1.43:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+活跃
+
+100X
+
+0.50
+
+2.00
+3.50
+
+7.00
+18.50
+
+5.00
+1.00
+
+0.50
+0.50
+
+1.00
+6.00
+
+20.00
+
+1000X
+
+68
+
+34.00
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生较活跃，以晚幼红细胞增生
+为主，红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+1
+
+0.50
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+             骨髓形态学检查报告
+Bone Marrow Morphological Examination Report
+
+  专题编号
+ Study Number
+  动物品系
+Animal Species
+  染色方法
+Dyeing Method
+
+A2019028-T014-01
+
+  采集途径
+Sampling From
+   取材质量
+Material Quality
+
+胸骨
+
+良好
+
+食蟹猴
+
+刘氏染色
+
+  专题负责人
+Study Director
+动物编号
+Animal ID
+   涂片质量
+ Smear Quality
+
+3F003
+
+良好
+
+高婷婷
+
+   制片日期
+   Made Date
+   染色质量
+Dyeing Quality
+
+2019-12-30
+
+良好
+
+检查号Check No.：BM20200110017
+
+ 细胞名称
+Cell Name
+
+    原始血细胞 Hematogone
+
+原始粒细胞 Myeloblast 
+早幼粒细胞 Promyelocyte
+
+  中性
+ 粒细胞
+Neutrophil
+
+ 嗜酸性
+ 粒细胞
+Eosinophil
+
+ 嗜碱性
+ 粒细胞
+Basophil
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+中幼 Myelocyte
+晚幼 Metamyelocyte
+
+杆状 Band
+分叶核 Segment
+
+原始红细胞 Proerythroblast
+早幼红细胞 Basophilic Erythroblast
+
+中幼红细胞 Polychromatic Erythroblast
+晚幼红细胞 Orthochromatic Erythroblast
+
+原巨红细胞 Mega Erythrocyte
+早巨红细胞 Basophilic Megaloblast
+
+中巨红细胞 Polychromatic Megaloblast 
+晚巨红细胞 Orthochromatic Megaloblast
+
+原始淋巴细胞 Lymphoblast
+幼稚淋巴细胞 Prolymphocyte
+
+淋巴细胞 Lymphocyte 
+嗜碱淋巴细胞 Phagocytic Lymphocyte
+
+异型淋巴细胞 Heterotypic Lymphocyte
+原始单核细胞 Monoblast
+
+幼稚单核细胞 Promonocyte
+单核细胞 Monocyte
+
+原始浆细胞 Primordial Plasma Cell
+幼稚浆细胞 Infantile Plasma Cell
+
+浆细胞Plasma Cell
+原始巨核细胞 Megakaryoblast
+
+ 粒细胞系统
+Granulocytic
+   Series
+
+ 红细胞系统
+Erythrocytic
+   Series
+
+ 淋巴系统
+Lymphocytic
+  Series
+
+ 单核系统
+Monocytic
+  Series
+
+ 浆细胞系统
+Plasmacytic
+  Series
+
+总数
+Total
+
+200
+
+1
+4
+
+7
+14
+
+37
+10
+
+2
+
+1
+
+1
+
+2
+
+12
+40
+
+(%)
+
+粒红比G / E Ratio
+
+1.43:1
+            有核细胞增生情况
+Nucleated Cell Proliferation Information
+
+活跃
+
+100X
+
+0.50
+
+2.00
+3.50
+
+7.00
+18.50
+
+5.00
+1.00
+
+0.50
+0.50
+
+1.00
+6.00
+
+20.00
+
+1000X
+
+68
+
+34.00
+
+         形态描述
+Morphological Description
+
+1.取材，涂片，染色良好，有核细胞增生活跃
+。
+2.粒系增生活跃，各阶段细胞分化比例大致正
+常，细胞形态无明显异常。
+3.有核红细胞增生较活跃，以晚幼红细胞增生
+为主，红细胞形态基本正常。
+4.淋巴细胞及单核细胞形态及比例无明显异常
+。
+5.可见各分化阶段巨核细胞，血小板散在成簇
+。
+
+ 巨核细胞系统
+Megakaryocytic
+   Series
+
+幼巨核细胞 Promegakaryoblast
+颗粒型巨核细胞 Granulocyte Megakaryocyte
+
+产板型巨核细胞 Thromocytogenic Megakaryocyte
+裸核巨核细胞 Nude Nucleus Megakaryocyte
+
+1
+
+0.50
+
+ 其它细胞
+Other Cells
+
+组织细胞 Histocyte
+组织嗜碱细胞 Tissue Basophile Cell
+组织嗜酸细胞 Tissue Eosinophil Cell
+
+吞噬细胞 Phagocytic Cell
+
+内皮细胞 Endothelial Cell
+网状细胞 Reticular Cell
+
+其它Others
+
+阅片人员Observed by：潘娅
+
+阅片日期Date：2020-01-10
+
+确认人员Confirmed by：胡倩
+
+确认日期Date： 2020-01-10
+
+Ubuntu Server + Fluxbox on Mac OSX using
+VirtualBox
+
+March 31, 2013
+
+Update, April 20, 2014:
+Here's a newer version of this post, with a downloadable vdi package
+
+I like Mac OSX as a general computing environment, but I prefer Debian (and more recently Ubuntu) for development.
+
+Instead of running my Mac in dual-boot mode, I tried using VirtualBox to run Ubuntu Desktop.
+
+Unfortunately, the virtual image was unusable: even at two gigabytes of memory (the most allowed by the vm) it was painfully slow, and
+using the dash was basically impossible.
+
+But since my development environment consists mostly of ROXTerm and emacs, I wanted to see how Ubuntu Server plus a lightweight
+window manager such as Fluxbox would work instead.
+
+It's been terrific so far, and the setup was simple:
+
+Fluxbox running like a champ on Ubuntu Server in VirtualBox
+
+1. After downloading the Ubuntu Server iso file, I created a new virtual image and used the iso as the base media
+2. Once installed, I followed the instructions for setting up Fluxbox without a login manager:
+
+sudo apt-get install xorg fluxbox fluxconf
+
+3. Then, I started Fluxbox for the first time:
+
+startx
+
+4. For the Guest Additions installation, I installed these packages first:
+
+apt-get install dkms build-essential linux-headers-generic
+
+And then requested the guest additions from the VirtualBox menu: Devices -> Install Guest Additions which "loads" the guest
+additions virtual disk. Under gnome or kde the disk gets mounted automatically, but in Fluxbox I had to mount it myself before running
+the install script:
+
+sudo mount /dev/dvd /media/cdrom
+cd /media/cdrom
+sudo sh ./VBoxLinuxAdditions.run
+
+Archived from the original at http://denis.papathanasiou.org/
+
+ Bitcoin Donate: 14TM4ADKJbaGEi8Qr8dh4KfPBQmjTshkZ2
+

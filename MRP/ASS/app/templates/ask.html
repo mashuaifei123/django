@@ -1,0 +1,28 @@
+ <!DOCTYPE html>
+ <html>
+<head>
+<meta charset="utf-8">
+<title>Markdown Player</title>
+<link href="//cdn.bootcss.com/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+<script src="//cdn.bootcss.com/jquery/3.0.0-alpha1/jquery.js"></script>
+<script src="//cdn.bootcss.com/markdown-it/4.4.0/markdown-it.min.js"></script>
+<script>
+   window.searchMap = location.search.substr(1).split('&').reduce(function(r, it) {
+     var them = it.split('='); r[them[0]] = them[1]; return r;
+   }, {});
+   $.ajaxSetup({async: false});
+</script>
+</head>
+<body>
+ 
+   <div class="markdown-html">
+        <div class="markdown-html" id = "md"><script>$.get((searchMap.md || "/static/md/wendang.md"), function(text) { document.write(markdownit().render(text)); });</script></div>
+   </div>
+    <img src="/static/img/a.png" class="image">
+   <br>
+    <img src="/static/img/spc1.png" class="image">
+    <img src="/static/img/spc2.png" class="image">
+    <img src="/static/img/spc3.png" class="image">
+    <img src="/static/img/spc4.png" class="image">
+</body>
+</html>

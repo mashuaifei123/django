@@ -1,0 +1,17 @@
+                            <form id="squery" action="/" style="display:flex" role="form" class="form-horizontal" method="get">
+                                <div class="form-group">
+                                    <label for="name">实验编号:</label>
+                                    <input type="text" class="form-control" name="studyid" maxlength="20" placeholder="{{data.studyid|safe}}"><br>
+                                    <label for="name">房间号:</label>
+                                    <input type="text" class="form-control" name="roomid" maxlength="10" placeholder="{{data.roomid|safe}}"><br>
+                                    <label for="name">开始时间:</label>
+                                    <input type="text" class="form-control" name="stime" maxlength="10" placeholder="{{data.s_time|safe}}"><br>
+                                    <label for="name">结束时间:</label>
+                                    <input type="text" class="form-control" name="ttime" maxlength="10" placeholder="{{data.t_time|safe}}"><br>
+
+                                <a class="btn btn-danger" href="#" onclick="if (document.getElementsByName('studyid')[0].value == ''){
+    document.getElementsByName('studyid')[0].value = document.getElementsByName('studyid')[0].placeholder;
+    document.getElementsByName('roomid')[0].value = document.getElementsByName('roomid')[0].placeholder;
+    document.getElementsByName('stime')[0].value = document.getElementsByName('stime')[0].placeholder;
+    document.getElementsByName('ttime')[0].value = document.getElementsByName('ttime')[0].placeholder;}
+    document.getElementById('squery').submit();return false;">查询</a>

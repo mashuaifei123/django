@@ -1,0 +1,39 @@
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'home' %}">TTWV</a>
+        </div>
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="nav navbar-nav">
+                <li{% if '/UploadMulti/progress-bar-upload/' in request.path %} class="active"{% endif %}>
+                    <a href="{% url 'UploadMulti:progress_bar_upload' %}">TtoW</a>
+                </li>
+
+                <li{% if '/UploadMulti/tsm-upload/' in request.path %} class="active"{% endif %}>
+                <a href="{% url 'UploadMulti:tsm_upload' %}">标签生成</a>
+                </li>
+
+                <li{% if '/UploadMulti/judge/' in request.path %} class="active"{% endif %}>
+                    <a href="{% url 'UploadMulti:xzx_upload' %}">显著性</a>
+                </li>
+
+                <li{% if '/UploadMulti/spss_upload/' in request.path %} class="active"{% endif %}>
+                    <a href="{% url 'UploadMulti:spss_upload' %}">个体数据</a>
+                </li>
+
+                <li{% if '/UploadMulti/word_upload/' in request.path %} class="active"{% endif %}>
+                    <a href="{% url 'UploadMulti:word_upload' %}">word生成</a>
+                </li>
+
+
+                <!-- 源代码注释可用于修改增加超超连接<li><a href="https://simpleisbetterthancomplex.com">simpleisbetterthancomplex.com</a></li>-->
+            </ul>
+        </div>
+    </div>
+</nav>

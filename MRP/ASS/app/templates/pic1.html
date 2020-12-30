@@ -1,0 +1,222 @@
+
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+
+  <!--<link href="//cdn.bootcss.com/skeleton/2.0.4/skeleton.css" rel="stylesheet">-->
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="/static/bower_components/select2/dist/css/select2.min.css">
+
+  <title>温度</title>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+  <![endif]-->
+</head>
+
+<body class="skin-default-dark fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">载入中</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <b>
+                            <img src="/static/img/logo.png" class="dark-logo">
+                        </b>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <table class="table text-center mb-0">
+                        <tbody>
+                            <tr>
+                                <td class="border-top-0"><a href="/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info">&nbsp;全时间点图表&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/pic/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info">&nbsp;SPC控制图&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/hold/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info" >&nbsp;报告下载&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/pic1/" class="h5 nav-btn text-dark">&nbsp;温度&nbsp;</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </nav>
+        </header>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-5 align-self-center">
+                        <h4 class="text-themecolor">Room: {{day.room_id}}</h4>
+                    </div>
+                    <div class="col-7">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <form id="squery" action="pic/" style="display:flex" role="form" class="form-horizontal" method="get">
+                                <div class="form-group" >
+                                    <div class="input-group ">
+                                        <label>Room:</label>
+                                        <select class="form-control select2"  id="roomid"  name="roomid"  data-placeholder="请选择房间" style="width: 100%;">
+                                        </select>
+                                    </div>
+                                    <div class="input-group ">
+                                        <label>Time:</label><br>
+                                         <input type="text" class="form-control pull-right" name ="time" id="reservation"style="width: 100%;">
+                                     </div>
+                                <button type="submit" class="btn btn-danger">查询</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="card oh">
+                            <div id="echarts" style="width:100%;height:600px;"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-body" style="height:600px;">
+                                <h5 class="card-title">{{day.room|safe}}</h5>
+                                <!--<h6 class="card-subtitle">{{stock_info.code|safe}}</h6>-->
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p class="h1 stock-price">{{day.room_id|safe}} 房间</p>
+                                                <span class="stock-change">温度</span>&nbsp;&nbsp;
+                                                <span class="stock-pchange">I-MR Chart</span>
+                                            </td>
+                                            <td style="">
+                                                <span class="text-dark">时间范围：<br>{{day.s_time|safe}}<br>{{day.t_time|safe}}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>温度Max：<span class="wd-max">{{day.wdmax0|safe}}</span></td>
+                                            <td>日温差Max：<span class="sd-max">{{data.sdmax0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>温度Min：<span class="wd-min stock-pclose">{{day.wdmin0|safe}}</span></td>
+                                            <td>该日日期：<span class="sd-min">{{data.sdmin0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>不合格数：<span class="text-d0ark">{{day.wdunpass0|safe}}</span></td>
+                                            <td>日温差min：<span class="text-dark">{{data.sdunpass0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>合格数：<span class="text-dark">{{day.wdpass0|safe}}</span></td>
+                                            <td>该日日期：<span class="text-dark">{{data.sdpass0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>合格率：<span class="wd_rate">{{day.wdpass_rate0|safe}}</span></td>
+                                            <td>温差超4度的天数：<span class="sd_rate">{{data.sdpass_rate0|safe}}</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <b>
+                    </b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/jquery.freezeheader.js"></script>
+    <script src="/static/js/echarts.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/pages.js"></script>
+    <script src="/static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/static/bower_components/moment/min/moment.min.js"></script>
+    <script src="/static/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <script src="/static/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(freezeRankTableHeade());
+    var myChart = echarts.init(document.getElementById('echarts'));
+    var date1t = {{day.date1|safe}}
+    var wdt = {{day.wd|safe}}
+    var wd_bart = {{day.wd_bar|safe}}
+    var wd_uclt = {{day.wd_ucl|safe}}
+    var wd_ucl_ct = {{day.wd_ucl_c|safe}}
+    var wd_ucl_bt = {{day.wd_ucl_b|safe}}
+    var wd_lclt = {{day.wd_lcl|safe}}
+    var wd_lcl_ct = {{day.wd_lcl_c|safe}}
+    var wd_lcl_bt = {{day.wd_lcl_b|safe}}
+
+    var wd_mrt = {{day.wd_mr|safe}}
+    var wd_mr_bart = {{day.wd_mr_bar|safe}}
+    var wd_mr_uclt = {{day.wd_mr_ucl|safe}}
+    var wd_mr_ucl_ct = {{day.wd_mr_ucl|safe}}
+    var wd_mr_ucl_bt = {{day.wd_mr_ucl_c|safe}}
+    var wd_mr_lclt = {{day.wd_mr_ucl_b|safe}}
+    var wd_mr_lcl_ct = {{day.wd_mr_lcl_c|safe}}
+    var wd_mr_lcl_bt = {{day.wd_mr_lcl_b|safe}}
+
+    var wd_maxt = {{day.wd_max|safe}}
+    var wd_mint = {{day.wd_min|safe}}
+    var mr_maxt = {{day.mr_max|safe}}
+
+    </script>
+    <script src="/static/js/wsdchart2.js"></script>
+    <script>
+      $(function () {
+        //Date range picker 时间选择
+        $('#reservation').daterangepicker(
+          {
+            autoUpdateInput: true,  //填充时间
+            startDate: '2020-07-01',  //开始时间
+            endDate  : '2020-07-27',  // 填充的结束时间
+            fromLabel: "开始时间",
+            toLabel: "结束时间",
+            locale:
+            {
+              format: 'YYYY-MM-DD',
+              applyLabel: '确定', //确定按钮文本
+              cancelLabel: '取消', //取消按钮文本
+              daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+              monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月'
+              ],
+            }
+          });
+      //Initialize Select2 Elements
+       $('.select2').select2()
+      });
+    </script>
+    <!-- select2 -->
+    <script>
+    var roomid = {{ day.roomid|safe }};
+
+
+    $(function () {
+    $('#roomid').select2({
+    data: roomid,
+    });
+    });
+    </script>
+    <script>
+    $(document).ready(function(){
+      $(".btn1").click(function(){
+      $("#md").hide();
+      });
+      $(".btn2").click(function(){
+      $("#md").show();
+      });
+    });
+    </script>
+</body>
+</html>

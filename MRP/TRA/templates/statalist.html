@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}PristimaSchedule{% endblock %}
+
+{% block css %}
+      <link rel="stylesheet" href="{% static 'DataTables/DataTables-1.10.20/css/dataTables.bootstrap.min.css' %}">
+      <link rel="stylesheet" href="{% static 'DataTables/Buttons-1.6.1/css/buttons.dataTables.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+          培训统计
+        <small>TRA_list</small>
+      </h1>
+    </section>
+{% endblock %}
+{% block content %}
+<!-- Main content -->
+<section class="content">
+  <!-- /.box-header -->
+  <div class="box-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-info">
+          <div class="box-header with-border">
+            <h3 class="box-title">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">最新培训</font>
+              </font>
+            </h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body">
+            <div class="table-responsive">
+              <div class="box-body" style="overflow-x:auto; white-space:nowrap">
+                <table id="assets_table" class="table table-bordered table-striped table-hover"></table>
+              </div>
+            </div>
+            <!-- /.table-responsive -->
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer clearfix">
+            <!-- <a href="javascript:void(0)" class="btn btn-sm btn-info btn-flat pull-left">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">下新订单</font>
+              </font>
+            </a> -->
+            <a href="{% url 'TRA:traininglist' %}" class="btn btn-sm btn-default btn-flat pull-right">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">查看所有</font>
+              </font>
+            </a>
+          </div>
+          <!-- /.box-footer -->
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="box box-primary">
+          <div class="box-header with-border">
+            <h3 class="box-title">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">每月趋势</font>
+              </font>
+            </h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+            </div>
+          </div>
+          <div class="box-body">
+            <div class="chart" style="overflow-x:auto; white-space:nowrap">
+              <div id="container" style="width: 730px; height: 450px; margin: 0 auto"></div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+      <!-- /.col -->
+    </div>
+  </div>
+  <!-- /.box-header -->
+  <div class="callout callout-info" style="width: 100%;">
+    <h4>Tip!</h4>
+    <p>默认显示最近10次培训.培训时间由近到远<br>
+    </p>
+  </div>
+  <!-- /.col -->
+</section>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'DataTables/DataTables-1.10.20/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'DataTables/DataTables-1.10.20/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/dataTables.buttons.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/buttons.flash.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/buttons.html5.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/buttons.print.js' %}"></script>
+<!-- <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<script src="{% static 'Highcharts-8.1.0/code/highcharts.js' %}"></script>
+<!-- <script src="{% static 'Highcharts-8.1.0/code/modules/exporting.js' %}"></script>
+<script src="{% static 'Highcharts-8.1.0/code/highcharts-zh_CN.js' %}"></script> -->
+
+<script>
+var datast = {{ series|safe }};
+
+$(document).ready(function() {  
+   var chart = {
+      type: 'column'
+   };
+   var title = {
+      text: '每月培训统计'   
+   };
+   var subtitle = {
+      text: '目前为演示数据'  
+   };
+   var xAxis = {
+      categories: {{ dym|safe }},
+      crosshair: true
+   };
+   var yAxis = {
+      min: 0,
+      title: {
+         text: '计数和'         
+      }      
+   };
+   var tooltip = {
+      headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+      pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+         '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+      footerFormat: '</table>',
+      shared: true,
+      useHTML: true
+   };
+   var plotOptions = {
+      column: {
+         pointPadding: 0.1,
+         borderWidth: 0
+      }
+   };  
+   var credits = {
+      enabled: false
+   };
+   
+   var series= datast;     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.title = title;   
+   json.subtitle = subtitle; 
+   json.tooltip = tooltip;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;  
+   json.series = series;
+   json.plotOptions = plotOptions;  
+   json.credits = credits;
+   $('#container').highcharts(json);
+  
+});
+</script>
+<script>
+var dataSet = {{ data|safe }};
+var columns = {{ title|safe }};
+// function searchBtn3(id) {
+//     alert(id);
+// }
+$(function () {
+  var table = $('#assets_table').DataTable({
+          "buttons": [
+              {
+              extend: 'copy',
+              text: '复制到剪切板',
+              },
+              {
+              extend: 'csv',
+              text: '导出为CSV文件',
+              },
+          ], <!-- 导出文件按钮设定 -->
+          "data": dataSet,
+          "columns": columns,
+          "paging": true,       <!-- 允许分页 -->
+          "lengthChange": true, <!-- 允许改变每页显示的行数 -->
+          "searching": true,    <!-- 允许内容搜索 -->
+          "ordering": true,     <!-- 允许排序 -->
+          "info": true,         <!-- 显示信息 -->
+          "autoWidth": false,   <!-- 固定宽度 -->
+          "responsive": false,   <!-- 关闭响应式效果,否则以上设置无效 -->
+//           "columnDefs": [
+//             {
+//                 "targets": [7,8],
+//                 render: function (data, type, full, meta) {
+//                     if (data) {
+//                         if (data.length > 60) {
+//                             return data.substr(0, 60) + " <a href = 'javascript:void(0);' onclick = 'javascript:searchBtn3(\""+data+"\")' >...</a> ";
+//                         }else{
+//                             return data;
+//                         }
+//                     }else {
+//                             return "";
+//                     }
+//                 }
+//             }],<!-- 列宽度宽度 -->
+          <!--"scrollX": true,      <!-- 超长列滚动 -->-->
+          "fixedColumns":{ 
+          "leftColumns": 2,
+          "rightColumns": 1
+                           },   <!-- 这个是用来固定列的 -->
+          "lengthMenu": [ [6, 15, 21, -1], [6, 15, 21, "所有"] ], <!-- 显示数量菜单 -->
+          "displayLength": 6,   <!-- 默认显示数量 -->
+          "language": {
+            "search": "当前列表搜索:",
+            "searchPlaceholder": "请输入要搜索内容...",
+            "pagingType": 'full',
+            "processing": "处理中...",
+	          "lengthMenu": "显示 _MENU_ 项结果",
+	          "zeroRecords": "没有找到相应的结果",
+	          "info": "第 _START_ 至 _END_ 行，共 _TOTAL_ 行",
+	          "infoEmpty": "第 0 至 0 项结果，共 0 项",
+	          "infoFiltered": "(由 _MAX_ 项结果过滤)",
+            "paginate": {
+    	        "first": "首页",
+              "previous": "上一页",
+              "next": "下一页",
+              "last": "末尾页"
+           }
+          }
+        });
+        table.buttons().container().appendTo($(table.table().container() )); <!-- 把按钮挂在那里 --> 
+      });
+</script>
+{% endblock %}

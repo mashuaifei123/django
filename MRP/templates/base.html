@@ -1,0 +1,361 @@
+{% load static %}
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>{% block title %}base{% endblock %}</title>
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/Ionicons/css/ionicons.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/AdminLTE.min.css' %}">
+  <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
+        page. However, you can choose any other skin. Make sure you
+        apply the skin class to the body tag so the changes take effect. -->
+  <link rel="stylesheet" href="{% static 'adminlet-2.4.10/dist/css/skins/skin-blue.min.css' %}">
+  <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/select2/dist/css/select2.min.css' %}">
+
+  {% block css %}{% endblock %}
+
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to get the
+desired effect
+|---------------------------------------------------------|
+| SKINS         | skin-blue                               |
+|               | skin-black                              |
+|               | skin-purple                             |
+|               | skin-yellow                             |
+|               | skin-red                                |
+|               | skin-green                              |
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | fixed                                   |
+|               | layout-boxed                            |
+|               | layout-top-nav                          |
+|               | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="/" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>MRP</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>MRP_Board</b></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                            <form action="{% url 'assets:studyinfofull' %}" method="get">
+                                <div class="input-group">
+                                  <select id="study_list" name="q" class="form-control select2-allow-clear"></select>
+                                  <span class="input-group-btn">
+                                      <button type="submit" id="search-btn" class="btn btn-default" ><i class="fa fa-search" ></i>
+                                      </button>
+                                    </span>
+                                </div>
+                              </form>
+                    </div>
+                </div>
+            </div>
+        <!--选择框-->
+        <!--<option value="">请选择试验编号</option>-->
+   </nav>
+  </header>
+
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar Menu -->
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">导航栏</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li>
+            <a href="#">
+              <i class="fa fa-area-chart"></i> <span>Disboard</span>
+            </a>
+        </li>
+        <li>
+          <a href="{% url 'studys:studysGantt' %}">
+            <i class="glyphicon glyphicon-list-alt"></i> <span>项目进展</span>
+          </a>
+        </li>
+        <li class="treeview">
+            <a href="#">
+              <i class="glyphicon glyphicon-ruble"></i> <span>Pristima</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{% url 'pristima:Dosage_BW' %}"><i class="glyphicon glyphicon-erase"></i> 给药&体重</a></li>
+              <li><a href="{% url 'pristima:ScheduleParameter' %}"><i class="fa fa-gg"></i> 试验计划临检</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+              <i class="fa  fa-list-ol"></i> <span>专题信息</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{% url 'studys:sdmanagerinfo' %}"><i class="fa fa-table"></i> 专题进展</a></li>
+              <li><a href="{% url 'studys:studyplan' %}"><i class="fa fa-calendar"></i> 专题日程</a></li>
+              <li><a href="{% url 'studys:studyplancreate' %}"><i class="fa fa-indent"></i> 导入日程</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-balance-scale"></i> <span>供试品信息</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{% url 'TSM:confstatus' %}"><i class="fa fa-table"></i> 配制状态</a></li>
+              <li><a href="{% url 'TSM:inventoryinfo' %}"><i class="fa fa-table"></i> 供试品接收</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+              <i class="fa fa-pied-piper"></i> <span>动物管理</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{% url 'animal:animalid' %}"><i class="fa fa-table"></i> 动物详情</a></li>
+              <li class="treeview">
+                <a href="{% url 'TSM:confstatus' %}"><i class="fa fa-hospital-o"></i> <span>动物房</span>                    
+                <span class="pull-right-container">
+                  <i class="fa fa-angle-left pull-right"></i>
+                </span>
+              </a>
+                <ul class="treeview-menu">
+                    <li><a href="{% url 'animal:F_1F' %}"><i class="fa fa-foursquare"></i>1F</a></li>
+                    <li><a href="{% url 'animal:F_2F' %}"><i class="fa fa-foursquare"></i>2F</a></li>
+                    <li><a href="{% url 'animal:F_3F' %}"><i class="fa fa-foursquare"></i>3F</a></li>
+                    <li><a href="{% url 'animal:F_4F' %}"><i class="fa fa-foursquare"></i>4F</a></li>
+                </ul>
+              </li>
+            </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa  fa-calendar-plus-o"></i> <span>兽医运行</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-table"></i> 专题状态</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-bar-chart"></i> <span>分析测试</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-table"></i> 专题状态</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-scissors"></i> <span>病理研究</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{% url 'PAT:info' %}"><i class="fa fa-table"></i> 病理信息</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-tint"></i> <span>临床检验</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{% url 'CLI:cliinfo' %}"><i class="fa fa-table"></i> 临检日程</a></li>
+            <li><a href="{% url 'CLI:clireadinginfo' %}"><i class="fa fa-calendar"></i> 临检阅片</a></li>
+            <li><a href="{% url 'CLI:cliLB_BW' %}"><i class="fa fa-download"></i> 骨髓下载</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa  fa-random"></i> <span>SEND</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-table"></i> 专题状态</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="glyphicon glyphicon-tags"></i> <span>QAU</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{% url 'QAU:checkplan' %}"><i class="fa fa-table"></i> 检查计划</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+            <a href="#">
+              <i class="fa   fa-file-text"></i> <span>档案管理</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="#"><i class="fa fa-table"></i> 专题状态</a></li>
+            </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa   fa-share-alt-square"></i> <span>培训</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{% url 'TRA:statalist' %}"><i class="fa  fa-bar-chart"></i> 培训统计</a></li>
+            <li><a href="{% url 'TRA:traininglist' %}"><i class="fa  fa-file-word-o"></i> 培训主题信息</a></li>
+          </ul>
+      </li>
+
+      </ul>
+      <!-- /.sidebar-menu -->
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+
+    {% block breadcrumb %}{% endblock %}
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      {% block content %}{% endblock %}
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        {% if user.is_authenticated %}
+        <strong>您好 {% firstof user.get_short_name user.get_username %}</strong>
+        {% endif %}
+      <a href="/admin" target="_blank">管理数据</a>
+      <a href="{% url 'admin:logout' %}">登出</a>
+      <a href="{% url 'admin:password_change' %}">修改密码</a>
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2019 <a href="http://www.cti-btc.com" target="_blank">华测生物</a>.</strong> All rights reserved.
+  </footer>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED JS SCRIPTS -->
+
+<!-- jQuery 3 -->
+<script type="text/javascript" src="{% static 'adminlet-2.4.10/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'adminlet-2.4.10/dist/js/adminlte.min.js' %}"></script>
+<!--Select2-->
+<script src="{% static 'adminlet-2.4.10/bower_components/select2/dist/js/select2.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/select2/dist/js/i18n/zh-CN.js' %}"></script>
+
+<script>
+    $('ul.sidebar-menu li').each(function (i) {
+        if($(this).children().first().attr('href')==='{{ request.path }}'){
+            $(this).addClass('active');
+        }else{
+        }
+    })
+</script>
+
+<!--script select2试验方案搜索下拉框-->
+<script>
+    $('#study_list').select2({
+        minimumInputLength: 3,
+        language: "zh-CN",
+        allowClear: true,
+        selectOnClose: true,
+        width:'element',
+        theme:'classic',
+        ajax:
+            {
+                url: "{% url 'assets:ajax_get_study_list' %}",
+                dataType: 'json',
+                type: 'GET',
+                delay: 250,
+                data: function (params) {
+                return {
+                search: params.term,
+                        }
+                                         },
+                processResults: function (data) {
+                return {
+                results: data
+                        };
+                                                },
+                cache: true
+            },
+        placeholder: {
+                        id: '-1', 
+                        text: '搜索专题编号... ... '
+                      }
+    });
+</script>
+
+{% block script %}{% endblock %}
+
+
+</body>
+</html>

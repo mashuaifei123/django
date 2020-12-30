@@ -1,0 +1,255 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}项目进展{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'gantt/style.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        项目进展
+        <small>Gantt</small>
+      </h1>
+    </section>
+{% endblock %}
+
+{% block content %}
+
+   <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-xs-12">
+
+        <div class="box">
+        <div class="box-header">
+          <h3 class="box-title">项目进展<small>(Gantt-info)</small></h3>
+          <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+              </button>
+          </div>
+        </div>
+        <form action="search" method="get" class="input-group input-group-sm">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="输入专题编号索搜...">
+              <span class="input-group-btn">
+                  <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                  </button>
+                </span>
+            </div>
+          </form>
+        <!-- /.box-header -->
+        <div class="box-body">
+                <form action="/your-name/" method="post">
+                    <label for="your_name">Your name: </label>
+                    <input id="your_name" type="text" name="your_name">
+                    <input type="submit" value="OK">
+                </form>
+        <div class="gantt_ot" >
+          <div class="gantt"></div>
+        </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+        </div>
+    <!-- /.col -->
+      </div>
+    <!-- /.row -->
+    </section>
+
+{% endblock %}
+
+
+{% block script %}
+
+<script src="{% static 'gantt/jquery.fn.gantt.js' %}" ></script>
+<script type="text/javascript">
+    $(function () {
+        "use strict";
+             //初始化gantt
+              $(".gantt").gantt({
+                  source:[
+                {
+                    name: "task  1",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1320192000000)/",
+                          to: "/Date(1320592000000)/",
+                        desc:"鼠标悬停显示文本",
+                        label: "eeee",
+                        customClass: "ganttRed"
+                    },
+                  {from: "/Date(1320591000000)/",
+                  to: "/Date(1325685200000)/",
+                  desc: '<b>Task #</b>3<br><b>Data</b>: [2018-06-06 15:30:00 - 2018-06-28 16:00:00]',
+									label: "eeew",
+									customClass: "ganttOrange"
+								},
+                  ]
+                }, {
+                    name: "",
+                    desc: "这是描述",
+                    values: [{
+                        from: "/Date(1322611200000)/",
+                        to: "/Date(1323302400000)/",
+                        label: "",
+                        customClass: "ganttRed"
+                    }]
+                }, {
+                    name: "task  3",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1323802400000)/",
+                        to: "/Date(1325685200000)/",
+                        label: "",
+                        customClass: "ganttGreen"
+                    }]
+                }, {
+                    name: "task  4",
+                    desc: "描述",
+                    values: [{
+                        from: "/Date(1325685200000)/",
+                        to: "/Date(1325695200000)/",
+                        label: "",
+                        customClass: "ganttBlue"
+                    }]
+                }, {
+                    name: "task  5",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1326785200000)/",
+                        to: "/Date(1325785200000)/",
+                        label: "",
+                        customClass: "ganttGreen"
+                    }]
+                }, {
+                    name: "task  6",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1328785200000)/",
+                        to: "/Date(1328905200000)/",
+                        label: "",
+                        customClass: "ganttBlue"
+                    }]
+                }, {
+                    name: "task  7",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1330011200000)/",
+                        to: "/Date(1336611200000)/",
+                        label: "",
+                        customClass: "ganttOrange"
+                    }]
+                }, {
+                    name: "task  8",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1336611200000)/",
+                        to: "/Date(1338711200000)/",
+                        label: "",
+                        customClass: "ganttOrange"
+                    }]
+                },
+              {
+                    name: "task  8",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1336611200000)/",
+                        to: "/Date(1338711200000)/",
+                        label: "",
+                        customClass: "ganttOrange"
+                    }]
+                },
+              {
+                    name: "task  8",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1336611200000)/",
+                        to: "/Date(1338711200000)/",
+                        label: "",
+                        customClass: "ganttOrange"
+                    }]
+                },
+              {
+                    name: "task  8",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1336611200000)/",
+                        to: "/Date(1338711200000)/",
+                        label: "",
+                        customClass: "ganttOrange"
+                    }]
+                },
+              {
+                    name: "task  8",
+                    desc: "",
+                    values: [{
+                        from: "/Date(1336611200000)/",
+                        to: "/Date(1338711200000)/",
+                        label: "",
+                        customClass: "ganttOrange"
+                    }]
+                },
+
+                {
+                    name: "more",
+                    desc: "",
+                    values: [
+                    {
+                        from: "/Date(1322611200000)/",
+                        to: "/Date(1323302400000)/",
+                        label: "",
+                        customClass: "ganttBlue"
+                    },
+                    {
+                        from: "/Date(1323802400000)/",
+                        to: "/Date(1325685200000)/",
+                        label: "",
+                        customClass: "ganttOrange"
+                    },
+                    {
+                        from: "/Date(1328785200000)/",
+                        to: "/Date(1328905200000)/",
+                        label: "",
+                        customClass: "ganttGreen"
+                    },
+
+                    ]
+                }],
+                  navigate: 'scroll',//// 底部使用拖拽的刻度尺还是按钮：scroll和buttons
+                  scale: "days",// 这里是设置默认比例。这里总共有四个参数：months  weeks days  hours.
+                  maxScale: "months", // 这里是设置最大比例。这里总共有四个参数：months  weeks days  hours.
+                  minScale: "days", // 这里是设置最小比例。这里总共有四个参数：months  weeks days  hours.
+                  itemsPerPage: 20, //设置甘特图每页显示多少条
+                  onItemClick: function (data) {//有数据范围内的点击事件
+                      // alert("Item clicked - show some details");
+                  },
+                  onAddClick: function (dt, rowId) {//无数据范围内的点击事件
+                      // alert("Empty space clicked - add an item!");
+                  },
+                  onRender: function () {//渲染事件
+                      if (window.console && typeof console.log === "function") {
+                          // console.log("chart rendered");
+                      }
+                  }
+
+      /*  //弹窗功能
+        $(".gantt").popover({
+            selector: ".bar",
+            title: "I'm a popover",
+            content: "And I'm the content of said popover.",
+            trigger: "hover",
+            placement: "auto right"
+        });*/
+
+      //prettyPrint();
+  });
+});
+</script>
+
+{% endblock %}

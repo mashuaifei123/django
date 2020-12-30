@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="markdown-html">
+        <script>$.get((searchMap.md || "/static/md/remade0.md"), function(text) { document.write(markdownit().render(text)); });</script>
+    </div>
+    <ul>
+        <!--
+        <li><p>
+            <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-retweet"> 呼吸转换
+            </span>
+            </button><br>
+            --呼吸读图  毒理运行部蔡华<br>
+           用于转换编排好次序阶段的多个word文件生成多个按一定要求的excel文件.<br>
+           上传一定数量的.docx文件.生成可以下载的多个excel文件. 
+        </p></li>
+        <li><p>
+            <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-retweet"> 血压转换
+            </span>
+            </button><br>
+            --血压csv转换  毒理运行部蔡华<br>
+           用于转换血压系统导出csv文件生成多个按一定要求的excel文件.<br>
+           必须包含一个从pristima导出的标准的名字为'分组表.xls'文件<br>
+           上传一定数量的csv文件.生成可以下载的多个excel文件. 
+        </p></li>
+        <li><p>
+            <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-retweet"> 心电转换
+            </span>
+            </button><br>
+            --心电转换  毒理运行部蔡华<br>
+           用于转换编排好xlsx文件生成按一定要求的excel文件.<br>
+           上传一个xlsx文件.生成可以下载的多个excel文件. 
+        </p></li>
+        <li><p>
+            <button class="btn btn-primary">
+            <span class="glyphicon glyphicon-retweet"> word转pdf
+            </span>
+            </button><br>
+            --pristima导出word整合报告调整  毒理部刘明立<br>
+            用于word页面设定A4设定横纵向保存为pdf上传一个.docx文件生成pdf. 
+        </p></li>
+        <li><a href="https://github.com/twbs/bootstrap/releases/tag/v3.3.7" target="_blank">Bootstrap 3.3.7</a></li>
+        <li><a href="https://github.com/jquery/jquery/releases/tag/3.1.1" target="_blank">jQuery 3.1.1</a></li>
+        <li><a href="https://github.com/blueimp/jQuery-File-Upload/releases/tag/v9.14.1" target="_blank">jQuery File Upload 9.14.1</a></li>
+        -->
+    </ul>
+{% endblock %}

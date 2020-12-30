@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}临检日程{% endblock %}
+
+{% block css %}
+     <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        临检日程
+        <small>CLI_list</small>
+      </h1>
+    </section>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">临检日程<small>(Info_list)</small></h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-2">
+                <form action="search" method="get" class="form-group">
+                  <div class="input-group">
+                    <input type="text" name="q" class="form-control" placeholder="输入专题编号索搜...">
+                    <span class="input-group-btn">
+                      <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"> 查询</i>
+                      </button>
+                    </span>
+                  </div>
+                  {% if error %}
+                  <div class="alert alert-danger">
+                          <a href="#" class="close" data-dismiss="alert">
+                              &times;
+                          </a>
+                          <strong>警告！</strong>您必须输入一个专题编号进行搜索
+                  </div>
+                  {% endif %}
+                </form>
+            </div>
+            <div class="col-xs-3">
+              <form action="search" method="get" class="form-group">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input type="text" name="date" class="form-control pull-right" id="reservation">
+                  <span class="input-group-btn">
+                    <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"> 查询</i>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+            </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="overflow-x:auto; white-space:nowrap">
+          <table id="assets_table" class="table table-bordered table-striped table-hover"></table>
+        </div>
+        <div class="box-body" style="overflow-x:auto">
+          <table id="sum_table" class="table table-bordered table-striped"></table>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<script>
+  $(function () {
+    //Date range picker 时间选择
+    $('#reservation').daterangepicker(
+      {
+        autoUpdateInput: true,  //填充时间
+        startDate: moment().subtract(2, 'days'),  //开始时间
+        endDate  : moment().subtract(-2, 'days'),  // 填充的结束时间
+        fromLabel: "开始时间",
+        toLabel: "结束时间",
+        locale:
+        {
+          format: 'YYYY-MM-DD',
+          applyLabel: '确定', //确定按钮文本
+          cancelLabel: '取消', //取消按钮文本
+          daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+          monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'
+          ],
+        }
+      })
+  });
+</script>
+
+<script>
+var dataSet = {{ clidata|safe }};
+var columns = {{ columnstitle|safe }};
+
+$(function () {
+        $('#assets_table').DataTable({
+          "data": dataSet,
+          "columns": columns,
+          "stripeClasses": [ 'odd-row', 'even-row' ], <!--分裂的样式-->
+          "paging": true,       <!-- 允许分页 -->
+          "lengthChange": true, <!-- 允许改变每页显示的行数 -->
+          "searching": true,    <!-- 允许内容搜索 -->
+          "ordering": true,     <!-- 允许排序 -->
+          "info": true,         <!-- 显示信息 -->
+          "autoWidth": false,   <!-- 固定宽度 -->
+          <!--"scrollX": true,      <!-- 超长列滚动 -->-->
+          "fixedColumns":{ 
+          "leftColumns": 2,
+          "rightColumns": 1
+                           },   <!-- 这个是用来固定列的 -->
+          "lengthMenu": [ [5, 10, 25, -1], [5, 10, 25, "所有"] ], <!-- 显示数量菜单 -->
+          "displayLength": 10,   <!-- 默认显示数量 -->
+          "language": {
+            "search": "当前列表搜索:",
+            "searchPlaceholder": "请输入要搜索内容...",
+            "pagingType": 'full',
+            "processing": "处理中...",
+	          "lengthMenu": "显示 _MENU_ 项结果",
+	          "zeroRecords": "没有找到相应的结果",
+	          "info": "第 _START_ 至 _END_ 行，共 _TOTAL_ 行",
+	          "infoEmpty": "第 0 至 0 项结果，共 0 项",
+	          "infoFiltered": "(由 _MAX_ 项结果过滤)",
+            "paginate": {
+    	        "first": "首页",
+              "previous": "上一页",
+              "next": "下一页",
+              "last": "末尾页"
+           }
+          }
+        });
+      });
+
+</script>
+
+<script>
+    var sumdataSet = {{ sumdata|safe }};
+    var sumcolumns = {{ sumcolumns|safe }};
+    
+    $(function () {
+            $('#sum_table').DataTable({
+              "data": sumdataSet,
+              "columns": sumcolumns,
+              "paging": false,       <!-- 允许分页 -->
+              "lengthChange": false, <!-- 允许改变每页显示的行数 -->
+              "searching": false,    <!-- 允许内容搜索 -->
+              "ordering": false,     <!-- 允许排序 -->
+              "info": false,         <!-- 显示信息 -->
+              "autoWidth": false,   <!-- 固定宽度 -->
+              <!--"scrollX": true,      <!-- 超长列滚动 -->-->
+              "fixedColumns":{ 
+              "leftColumns": 0,
+              "rightColumns": 1
+                               },   <!-- 这个是用来固定列的 -->
+              "lengthMenu": [ [5, 10, 25, -1], [5, 10, 25, "所有"] ], <!-- 显示数量菜单 -->
+              "displayLength": 10,   <!-- 默认显示数量 -->
+              "language": {
+                "search": "当前列表搜索:",
+                "searchPlaceholder": "请输入要搜索内容...",
+                "pagingType": 'full',
+                "processing": "处理中...",
+                "lengthMenu": "显示 _MENU_ 项结果",
+                "zeroRecords": "没有找到相应的结果",
+                "info": "第 _START_ 至 _END_ 行，共 _TOTAL_ 行",
+                "infoEmpty": "第 0 至 0 项结果，共 0 项",
+                "infoFiltered": "(由 _MAX_ 项结果过滤)",
+                "paginate": {
+                  "first": "首页",
+                  "previous": "上一页",
+                  "next": "下一页",
+                  "last": "末尾页"
+               }
+              }
+            });
+          });
+</script>
+{% endblock %}

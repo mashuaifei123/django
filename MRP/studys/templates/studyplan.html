@@ -1,0 +1,345 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}专题日程{% endblock %}
+
+{% block css %}
+     <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+       <!-- fullCalendar -->
+     <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/fullcalendar/dist/fullcalendar.min.css' %}">
+     <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/fullcalendar/dist/fullcalendar.print.min.css' %}" media="print">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+          专题日程
+        <small>studys_list</small>
+      </h1>
+    </section>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+              <ol class="breadcrumb">
+                  <li><a href="/"><i class="fa fa-dashboard"></i> 主页</a></li>
+                  <li class="active">专题日程</li>
+              </ol>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <form action="search" method="GET" class="form-group">
+              <div class="col-xs-2">
+                <label>&nbsp&nbsp专题编号</label>
+                <input type="text" name="q" class="form-control" placeholder="输入专题编号搜索...">
+              </div>
+              <div class="col-xs-1">
+                  <label>&nbsp&nbsp专题负责人</label>
+                  <input type="text" name="sd" class="form-control" placeholder="专题负责人搜索...">
+              </div>
+              <div class="col-xs-2">
+                <label>&nbsp&nbsp日期搜索</label>
+                <input type="text" name="date" class="form-control pull-right" id="reservation"
+                  placeholder="输入日期范围索搜...">
+              </div>
+              <div class="col-xs-1">
+                  <label>&nbsp&nbsp性别搜索</label>
+                    <select class="form-control select2" name="sex" id="sex" multiple="multiple" data-placeholder="请选择性别">
+                      <option value="Both">Both</option>
+                      <option value="F">雌性F</option>
+                      <option value="M">雄性M</option>
+                      </select>
+                  </select>
+                </div>
+              <div class="col-xs-2">
+                <label>&nbsp&nbsp试验操作搜索</label>
+                <select class="form-control select2" name="item" id="itemname" multiple="multiple"
+                  data-placeholder="请选择参数">
+                </select>
+              </div>
+              <div class="col-xs-2">
+                <label>&nbsp&nbsp部门搜索</label>
+                <select class="form-control select2" name="dept" id="dept" multiple="multiple" data-placeholder="请选择一个部门">
+                </select>
+              </div>
+              <div class="col-xs-1">
+                <label></label>
+                <span class="input-group-btn">
+                  <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"> 查询</i>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
+          <div class="box-body" style="overflow-x:auto; white-space:nowrap">
+              <table id="assets_table" class="table table-bordered table-striped table-hover"></table>
+          </div>
+          <!-- /.box-header -->
+          {% if sno %}
+          <div class="col-md-8">
+              <div class="box">
+                <div class="box-header">
+                  <ol class="breadcrumb">
+                    <li class="active">{{ sno|safe }}</li>
+                  </ol>
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="box box-primary">
+                  <div class="box-body no-padding">
+                    <!-- THE CALENDAR -->
+                    <div id="calendar"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+          <div class="col-xs-6">
+              <div class="callout callout-info">
+                  <h4>Tip!</h4>
+                  <p>默认填充未来一周时间,请注意选择日期范围
+                  </p>
+                </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- fullCalendar -->
+<script src="{% static 'adminlet-2.4.10/bower_components/fullcalendar/dist/fullcalendar.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/fullcalendar/dist/locale/zh-cn.js' %}"></script>
+
+<script>
+  $(function () {
+    //Date range picker 时间选择
+    $('#reservation').daterangepicker(
+      {
+        autoUpdateInput: true,  //填充时间
+        startDate: moment(),  //开始时间
+        endDate  : moment().subtract(-7, 'days'),  // 填充的结束时间
+        fromLabel: "开始时间",
+        toLabel: "结束时间",
+        locale:
+        {
+          format: 'YYYY-MM-DD',
+          applyLabel: '确定', //确定按钮文本
+          cancelLabel: '取消', //取消按钮文本
+          daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+          monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'
+          ],
+        }
+      });
+  });
+</script>
+<!-- select2 -->
+<script>
+var item = {{ itemdata|safe }};
+var dept = {{ deptdata|safe }};
+
+$(function () {
+  $('#itemname').select2({
+    data: item,
+  });
+  $('#dept').select2({
+    data: dept,
+  });
+  $('#sex').select2({
+  });
+});
+</script>
+<!-- assets_table_Datatable -->
+<script>
+var dataSet = {{ studydata|safe }};
+var columns = {{ columnstitle|safe }};
+
+$(function () {
+        $('#assets_table').DataTable({
+          "data": dataSet,
+          "columns": columns,
+          "paging": true,       <!-- 允许分页 -->
+          "lengthChange": true, <!-- 允许改变每页显示的行数 -->
+          "searching": true,    <!-- 允许内容搜索 -->
+          "ordering": true,     <!-- 允许排序 -->
+          "info": true,         <!-- 显示信息 -->
+          "autoWidth": false,   <!-- 固定宽度 -->
+          <!--"scrollX": true,      <!-- 超长列滚动 -->-->
+          "fixedColumns":{
+          "leftColumns": 2,
+          "rightColumns": 1
+                           },   <!-- 这个是用来固定列的 -->
+          "lengthMenu": [ [5, 10, 25, -1], [5, 10, 25, "所有"] ], <!-- 显示数量菜单 -->
+          "displayLength": 10,   <!-- 默认显示数量 -->
+          "language": {
+            "search": "当前列表搜索:",
+            "searchPlaceholder": "请输入要搜索内容...",
+            "pagingType": 'full',
+            "processing": "处理中...",
+	          "lengthMenu": "显示 _MENU_ 项结果",
+	          "zeroRecords": "没有找到相应的结果",
+	          "info": "第 _START_ 至 _END_ 行，共 _TOTAL_ 行",
+	          "infoEmpty": "第 0 至 0 项结果，共 0 项",
+	          "infoFiltered": "(由 _MAX_ 项结果过滤)",
+            "paginate": {
+    	        "first": "首页",
+              "previous": "上一页",
+              "next": "下一页",
+              "last": "末尾页"
+           }
+          }
+        });
+      });
+</script>
+
+<script>
+    $(function () {
+
+      /* initialize the external events
+       -----------------------------------------------------------------*/
+      function init_events(ele) {
+        ele.each(function () {
+
+          // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+          // it doesn't need to have a start or end
+          var eventObject = {
+            title: $.trim($(this).text()) // use the element's text as the event title
+          }
+
+          // store the Event Object in the DOM element so we can get to it later
+          $(this).data('eventObject', eventObject)
+
+          // make the event draggable using jQuery UI
+          $(this).draggable({
+            zIndex        : 1070,
+            revert        : true, // will cause the event to go back to its
+            revertDuration: 0  //  original position after the drag
+          })
+
+        })
+      }
+
+      init_events($('#external-events div.external-event'))
+
+      /* initialize the calendar
+       -----------------------------------------------------------------*/
+      //Date for the calendar events (dummy data)
+      var date = new Date()
+      var d    = date.getDate(),
+          m    = date.getMonth(),
+          y    = date.getFullYear()
+      var evedata = {{ eventd|safe }};
+      $('#calendar').fullCalendar({
+        locale:'zh-cn',
+        header    : {
+          left  : 'prev,next today',
+          center: 'title',
+          right : 'month,agendaWeek,agendaDay'
+        },
+        buttonText: {
+          today: '今天',
+          month: '月',
+          week : '周',
+          day  : '日'
+        },
+        //Random default events
+        events    : evedata,
+        editable  : true,
+        droppable : true, // this allows things to be dropped onto the calendar !!!
+        eventMouseover : function( event ) {
+                //鼠标悬停显示事件
+                $(this).attr('title', event.description);
+                //console.log('鼠标经过 ...');
+                //console.log('eventMouseover被执行，选中Event的title属性值为：', event.description);
+                // ...
+            },
+        drop      : function (date, allDay) { // this function is called when something is dropped
+
+          // retrieve the dropped element's stored Event Object
+          var originalEventObject = $(this).data('eventObject')
+
+          // we need to copy it, so that multiple events don't have a reference to the same object
+          var copiedEventObject = $.extend({}, originalEventObject)
+
+          // assign it the date that was reported
+          copiedEventObject.start           = date
+          copiedEventObject.allDay          = allDay
+          copiedEventObject.backgroundColor = $(this).css('background-color')
+          copiedEventObject.borderColor     = $(this).css('border-color')
+
+          // render the event on the calendar
+          // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+          $('#calendar').fullCalendar('renderEvent', copiedEventObject, true)
+
+          // is the "remove after drop" checkbox checked?
+          if ($('#drop-remove').is(':checked')) {
+            // if so, remove the element from the "Draggable Events" list
+            $(this).remove()
+          }
+
+        }
+      })
+
+      /* ADDING EVENTS */
+      var currColor = '#3c8dbc' //Red by default
+      //Color chooser button
+      var colorChooser = $('#color-chooser-btn')
+      $('#color-chooser > li > a').click(function (e) {
+        e.preventDefault()
+        //Save color
+        currColor = $(this).css('color')
+        //Add color effect to button
+        $('#add-new-event').css({ 'background-color': currColor, 'border-color': currColor })
+      })
+      $('#add-new-event').click(function (e) {
+        e.preventDefault()
+        //Get value and make sure it is not null
+        var val = $('#new-event').val()
+        if (val.length == 0) {
+          return
+        }
+
+        //Create events
+        var event = $('<div />')
+        event.css({
+          'background-color': currColor,
+          'border-color'    : currColor,
+          'color'           : '#fff'
+        }).addClass('external-event')
+        event.html(val)
+        $('#external-events').prepend(event)
+
+        //Add draggable funtionality
+        init_events(event)
+
+        //Remove event from text input
+        $('#new-event').val('')
+      })
+    })
+</script>
+{% endblock %}

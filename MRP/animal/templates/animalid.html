@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}动物详情{% endblock %}
+
+{% block css %}
+     <link rel="stylesheet" href="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+          动物详情
+        <small>AnimalID_list</small>
+      </h1>
+    </section>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+              <ol class="breadcrumb">
+                  <li><a href="/"><i class="fa fa-dashboard"></i> 主页</a></li>
+                  <li class="active">动物详情</li>
+              </ol>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+            <form action="search" method="GET" class="form-group">
+              <div class="col-xs-2">
+                <label>&nbsp&nbsp专题编号</label>
+                <input type="text" name="q" class="form-control" placeholder="输入专题编号索搜...">
+              </div>
+              <div class="col-xs-2">
+                  <label>&nbsp&nbspPretest-ID</label>
+                  <input type="text" name="PID" class="form-control" placeholder="输入PID索搜...">
+              </div>
+              <div class="col-xs-1">
+                <label></label>
+                <span class="input-group-btn">
+                  <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"> 查询</i>
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
+          
+          <!-- /.box-header -->
+          <div class="box-body" style="overflow-x:auto; white-space:nowrap">
+            <table id="assets_table" class="table table-bordered table-striped table-hover"></table>
+          </div>
+          <div class="box-body">
+            <table id="sum_table" class="table table-bordered table-striped"></table>
+          </div>
+          <div class="col-xs-6">
+              <div class="callout callout-info">
+                  <h4>Tip!</h4>
+                  <p>专题编号包含匹配. 字符长度限制18</br>
+                    Pretest-ID全字匹配.字符长度限制15</br>
+                    点击PTS动物ID跳转到动物详情</br>
+                    仅查询2019年之后数据
+                  </p>
+                </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+
+
+<script>
+var dataSet = {{ animaldata|safe }};
+var columns = {{ columnstitle|safe }};
+
+$(function () {
+        $('#assets_table').DataTable({
+          "data": dataSet,
+          "columns": columns,
+          "paging": true,       <!-- 允许分页 -->
+          "lengthChange": true, <!-- 允许改变每页显示的行数 -->
+          "searching": true,    <!-- 允许内容搜索 -->
+          "ordering": true,     <!-- 允许排序 -->
+          "info": true,         <!-- 显示信息 -->
+          "autoWidth": false,   <!-- 固定宽度 -->
+          <!--"scrollX": true,      <!-- 超长列滚动 -->-->
+          "fixedColumns":{ 
+          "leftColumns": 2,
+          "rightColumns": 1
+                           },   <!-- 这个是用来固定列的 -->
+          "lengthMenu": [ [5, 10, 25, -1], [5, 10, 25, "所有"] ], <!-- 显示数量菜单 -->
+          "displayLength": 10,   <!-- 默认显示数量 -->
+          "language": {
+            "search": "当前列表搜索:",
+            "searchPlaceholder": "请输入要搜索内容...",
+            "pagingType": 'full',
+            "processing": "处理中...",
+	          "lengthMenu": "显示 _MENU_ 项结果",
+	          "zeroRecords": "没有找到相应的结果",
+	          "info": "第 _START_ 至 _END_ 行，共 _TOTAL_ 行",
+	          "infoEmpty": "第 0 至 0 项结果，共 0 项",
+	          "infoFiltered": "(由 _MAX_ 项结果过滤)",
+            "paginate": {
+    	        "first": "首页",
+              "previous": "上一页",
+              "next": "下一页",
+              "last": "末尾页"
+           }
+          }
+        });
+      });
+</script>
+{% endblock %}

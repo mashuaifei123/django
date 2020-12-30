@@ -1,0 +1,1 @@
+python C:\Users\admin\Desktop\MRP\manage.py runserver 0.0.0.0:80

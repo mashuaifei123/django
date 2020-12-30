@@ -1,0 +1,148 @@
+{% extends 'UploadMulti/base.html' %}
+
+{% load static %}
+
+{% block title %}请先清除已有文件在转换.转换较慢请耐心等待.点击这里-->{% endblock %}
+
+{% block javascript %}
+    {# JQUERY FILE UPLOAD SCRIPTS #}
+    <script src="{% static 'js/jquery-file-upload/vendor/jquery.ui.widget.js' %}"></script>
+    <script src="{% static 'js/jquery-file-upload/jquery.iframe-transport.js' %}"></script>
+    <script src="{% static 'js/jquery-file-upload/jquery.fileupload.js' %}"></script>
+
+    {# PHOTOS PAGE SCRIPTS #}
+    <script src="{% static 'UploadMulti/js/progress-bar-upload.js' %}"></script>
+{% endblock %}
+
+{% block deleteurl %}
+<form method="post" action="{% url 'UploadMulti:clear_database_ss' %}">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.path }}">
+    <button type="submit" class="btn btn-danger pull-right">
+        <span class="glyphicon glyphicon-trash"></span> 删除所有文件
+    </button>
+</form>
+{% endblock %}
+
+{% block photos_content %}
+
+{% if Errordis %}
+    {% if not Error %}
+        <div class="alert alert-success">
+                <a href="#" class="close" data-dismiss="alert">
+                    &times;
+                </a>
+                <strong>请注意！</strong>您的转换任务已完成请下载。
+                <a href="/UploadMulti/spss-upload/">点击查看->已完成</a>
+        </div>
+    {% endif %}
+    {% if Error %}
+        <div class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert">
+                    &times;
+                </a>
+                <strong>警告！</strong>您上传的文件格式有问题请检查或联系管理员,已删除请重新操作。
+        </div>
+    {% endif %}
+{% endif %}
+<div style="margin-bottom: 20px;">
+    <button type="button" class="btn btn-warning js-upload-photos">
+        <span class="glyphicon glyphicon-cloud-upload"></span> 上传文件
+    </button>
+    <input id="fileupload" type="file" name="file" multiple
+           style="display: none;"
+           data-url="{% url 'UploadMulti:spss_upload' %}"
+           data-form-data='{"csrfmiddlewaretoken": "{{ csrf_token }}"}'>
+</div>
+
+<div class="btn-group btn-group-justified">
+    <div class="btn-group">
+        <form method="post" action="{% url 'UploadMulti:spss_excel' %}">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.path }}">
+            <button type="submit" class="btn btn-primary" title="用于生成spss数据格式的excel">
+                <span class="glyphicon glyphicon-retweet"></span>
+                spss数据格式生成
+            </button>
+        </form>
+    </div>
+
+     <div class="btn-group">
+        <form method="post" action="{% url 'UploadMulti:excel_form' %}">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ request.path }}">
+            <button type="submit" class="btn btn-primary" title="用于生成excel格式">
+                <span class="glyphicon glyphicon-retweet"></span>
+                个体数据
+            </button>
+        </form>
+    </div>
+</div>
+
+
+<table id="gallery" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>已上传--文件列表</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for photo in photos %}
+            <tr>
+                <td><a href="{{ photo.file.url }}">{{ photo.file.name }}</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table id="pass_to" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>已完成--文件列表</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for photo in photos2 %}
+            <tr>
+                <td><a href="{{ photo }}">{{ photo }}</a></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+<div class="modal fade" id="modal-progress" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Uploading...</h4>
+            </div>
+            <div class="modal-body">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 0%;">0%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<svg
+        xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+  <polygon points="100,10 40,180 190,60 10,60 160,180"
+  style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;">
+
+</svg>
+
+
+
+
+<script>
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("3d");
+ctx.font="40px Arial";
+ctx.strokeText("Hello World",100,500);
+
+</script>
+
+{% endblock %}

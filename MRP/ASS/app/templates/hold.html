@@ -1,0 +1,247 @@
+
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+
+  <!--<link href="//cdn.bootcss.com/skeleton/2.0.4/skeleton.css" rel="stylesheet">-->
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="/static/bower_components/select2/dist/css/select2.min.css">
+  <title>下载</title>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+  <![endif]-->
+</head>
+
+<body class="skin-default-dark fixed-layout">
+    <div class="preloader" id = 'PleaseWait'>
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">载入中</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <b>
+                            <img src="/static/img/logo.png" class="dark-logo">
+                        </b>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <table class="table text-center mb-0">
+                        <tbody>
+                            <tr>
+                                <td class="border-top-0"><a href="/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info">&nbsp;全时间点图表&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/pic/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info">&nbsp;SPC控制图&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/hold/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info" >&nbsp;报告下载&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/pic1/" class="h5 nav-btn text-dark">&nbsp;温度&nbsp;</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </nav>
+        </header>
+
+        <div class="page-wrapper">
+            <div class="modal fade" id="myModal">
+            <div class="modal-dialog modal-sm">
+
+            <img alt="" src="/static/img/loading.gif" />
+
+            </div><!-- /.modal-dialog -->
+            </div>
+            <div class="container-fluid">
+
+                        <div class="d-flex justify-content align-items-center">
+                            <form id="squery" action="hold/" style="display:flex" role="form" class="form-horizontal" method="get"  onsubmit="return sumbit_sure()">
+
+                                <div class="form-group " >
+                                    <label>Number of rooms:</label>
+                                    <div class="input-group ">
+
+                                        <select class="form-control select2"  id="roomnumber"  name="roomnumber"  style="width: 50%;" onChange="cll(this.value)" >
+                                                <option   value="0" selected="selected" >0</option>
+                                                <option   value="1" >1</option>
+                                                <option   value="2">2</option>
+                                                <option   value="3">3</option>
+                                                <option   value="4">4</option>
+                                                <option   value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="row" id = "div1">
+                                        <label>   Room and Time1:</label><br>
+                                         <div class="input-group " >
+
+                                             <div class="col-lg-4">
+                                                  <select class="form-control select2"     id="roomid1"  name="roomid"  data-placeholder="请选择房间" style="width: 100%;"></select>
+                                             </div>
+                                             <div class="col-lg-8">
+                                                <input type="text" class="form-control pull-right" name ="time1" id="reservation1" style="width: 100%;">
+                                             </div>
+                                         </div>
+                                    </div>
+                                    <div class="row" id = "div2">
+                                        <label>   Room and Time2:</label><br>
+                                         <div class="input-group " >
+                                             <div class="col-lg-4">
+                                                  <select class="form-control select2"    id="roomid2"  name="roomid"  data-placeholder="请选择房间" style="width: 100%;"></select>
+                                             </div>
+                                             <div class="col-lg-8">
+                                                <input type="text" class="form-control pull-right" name ="time2" id="reservation2" style="width: 100%;">
+                                             </div>
+                                         </div>
+                                    </div>
+                                    <div class="row" id = "div3">
+                                        <label>   Room and Time3:</label><br>
+                                         <div class="input-group " >
+                                             <div class="col-lg-4">
+                                                  <select class="form-control select2"    id="roomid3"  name="roomid"  data-placeholder="请选择房间" style="width: 100%;"></select>
+                                             </div>
+                                             <div class="col-lg-8">
+                                                <input type="text" class="form-control pull-right" name ="time3" id="reservation3" style="width: 100%;">
+                                             </div>
+                                         </div>
+                                    </div>
+                                    <div class="row" id = "div4">
+                                        <label>   Room and Time4:</label><br>
+                                         <div class="input-group " >
+                                             <div class="col-lg-4">
+                                                  <select class="form-control select2"    id="roomid4"  name="roomid"  data-placeholder="请选择房间" style="width: 100%;"></select>
+                                             </div>
+                                             <div class="col-lg-8">
+                                                <input type="text" class="form-control pull-right" name ="time4" id="reservation4" style="width: 100%;">
+                                             </div>
+                                         </div>
+                                    </div>
+                                    <div class="row" id = "div5">
+                                        <label>   Room and Time5:</label><br>
+                                         <div class="input-group " >
+                                             <div class="col-lg-4">
+                                                  <select class="form-control select2"     id="roomid5"  name="roomid"  data-placeholder="请选择房间" style="width: 100%;"></select>
+                                             </div>
+                                             <div class="col-lg-8">
+                                                <input type="text" class="form-control pull-right" name ="time5" id="reservation5" style="width: 100%;">
+                                             </div>
+                                         </div>
+                                    </div>
+                                <button type="submit" class="btn btn-danger"  >下载</button>
+                                </div>
+
+                            </form>
+                        </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/jquery.freezeheader.js"></script>
+    <script src="/static/js/echarts.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/pages.js"></script>
+    <script src="/static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/static/bower_components/moment/min/moment.min.js"></script>
+    <script src="/static/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <script src="/static/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script>
+     var reservation = ['#reservation1' ,'#reservation2', '#reservation3', '#reservation4', '#reservation5'];
+      $(function () {
+        //Date range picker 时间选择
+        for (var i=0;i<reservation.length;i++){
+        $(reservation[i]).daterangepicker(
+          {
+            autoUpdateInput: true,  //填充时间
+            startDate: '2020-07-01',  //开始时间
+            endDate  : '2020-07-27',  // 填充的结束时间
+            fromLabel: "开始时间",
+            toLabel: "结束时间",
+            locale:
+            {
+              format: 'YYYY-MM-DD',
+              applyLabel: '确定', //确定按钮文本
+              cancelLabel: '取消', //取消按钮文本
+              daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+              monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月'
+              ],
+            }
+          })};
+      //Initialize Select2 Elements
+       $('.select2').select2()
+      });
+    </script>
+    <!-- select2 -->
+
+    <script>
+    var roomid = {{ context.roomid|safe }};
+    var roomids = ['#roomid1' ,'#roomid2', '#roomid3', '#roomid4', '#roomid5'];
+    $(function () {
+    for (var i=0;i<reservation.length;i++){
+    $(roomids[i]).select2({
+    data: roomid,
+    })};
+    });
+    </script>
+    <script>
+    function cll(num){
+    let divnum = 'div'
+    let resnum = 'reservation'
+    let roomnum = 'roomid'
+
+    for (i = 1; i < 6; i++) {
+        d = "#" + divnum + i;
+             r = "#" + resnum + i;
+                o = "#" + roomnum + i;
+                 $(r).attr("disabled", true);
+                 $(o).attr("disabled", true);
+                 $(d).css("display", "none");
+                 console.log(i)
+        };
+    for (i = 1; i <= num ; i++) {
+        d = "#" + divnum + i;
+             r = "#" + resnum + i;
+             o = "#" + roomnum  + i;
+                 $(r).attr("disabled", false);
+                 $(o).attr("disabled", false);
+                 $(d).css("display", "");
+
+             };
+    };
+
+    </script>
+    <script>
+    function hideModal(){
+            $('#myModal').modal('hide');
+        }
+
+        function showModal(){
+            $('#myModal').modal({backdrop:'static',keyboard:false});
+        }
+
+    </script>
+
+<script language="javascript">
+function sumbit_sure(){
+var gnl=confirm("是否确定?");
+if (gnl==true){
+return true;
+}else{
+return false;
+}
+}
+</script>
+
+</body >
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--<link rel="stylesheet" href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css">-->
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+  <link rel="stylesheet" href="/static/bower_components/select2/dist/css/select2.min.css">
+
+  <title>首页</title>
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+  <![endif]-->
+</head>
+
+<body class="skin-default-dark fixed-layout">
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader__figure"></div>
+            <p class="loader__label">载入中</p>
+        </div>
+    </div>
+    <div id="main-wrapper">
+        <header class="topbar">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <b>
+                            <img src="/static/img/logo.png" class="dark-logo">
+                        </b>
+                    </a>
+                </div>
+                <div class="navbar-collapse">
+                    <table class="table text-center mb-0">
+                        <tbody>
+                            <tr>
+                                <td class="border-top-0"><a href="/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info">&nbsp;全时间点图表&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/pic/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info">&nbsp;SPC控制图&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/hold/" class="h5 nav-btn text-dark pb-2 border-bottom-3 border-info" >&nbsp;报告下载&nbsp;</a></td>
+                                <td class="border-top-0"><a href="/pic1/" class="h5 nav-btn text-dark">&nbsp;温度&nbsp;</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </nav>
+        </header>
+        <div class="page-wrapper">
+            <div class="container-fluid">
+                <div class="row page-titles">
+                    <div class="col-5 align-self-center">
+                        <h4 class="text-themecolor">Room: {{data.room_now_id}}</h4>
+                    </div>
+                    <div class="col-7">
+                        <div class="d-flex justify-content-end align-items-center">
+                            <form id="squery" action="/" style="display:flex" role="form" class="form-horizontal" method="get">
+                                <div class="form-group" >
+                                    <div class="input-group ">
+                                        <label>Room:</label>
+                                        <select class="form-control select2" multiple="multiple" id="roomid"  name="roomid"  data-placeholder="请选择房间" style="width: 100%;">
+                                        </select>
+                                    </div>
+                                    <div class="input-group ">
+                                        <label>Time:</label><br>
+                                         <input type="text" class="form-control pull-right" name ="time" id="reservation"style="width: 100%;">
+                                     </div>
+                                <button type="submit" class="btn btn-danger">查询</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="card oh">
+                            <div id="echarts" style="width:100%;height:600px;"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card">
+                            <div class="card-body" style="height:600px;">
+                                <h5 class="card-title">{{data.room_id|safe}}</h5>
+                                <!--<h6 class="card-subtitle">{{stock_info.code|safe}}</h6>-->
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p class="h1 stock-price">单房间</p>
+                                                <span class="stock-change">温度</span>&nbsp;&nbsp;
+                                                <span class="stock-pchange">湿度</span>
+                                            </td>
+                                            <td style="">
+                                                <span class="text-dark">时间范围：<br>{{data.s_time|safe}}<br>{{data.t_time|safe}}</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>温度Max：<span class="wd-max">{{data.wdmax0|safe}}</span></td>
+                                            <td>湿度Max：<span class="sd-max">{{data.sdmax0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>温度Min：<span class="wd-min stock-pclose">{{data.wdmin0|safe}}</span></td>
+                                            <td>湿度Min：<span class="sd-min">{{data.sdmin0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>不合格数：<span class="text-dark">{{data.wdunpass0|safe}}</span></td>
+                                            <td>不合格数：<span class="text-dark">{{data.sdunpass0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>合格数：<span class="text-dark">{{data.wdpass0|safe}}</span></td>
+                                            <td>合格数：<span class="text-dark">{{data.sdpass0|safe}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>合格率：<span class="wd_rate">{{data.wdpass_rate0|safe}}</span></td>
+                                            <td>合格率：<span class="sd_rate">{{data.sdpass_rate0|safe}}</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title h1 stock-price">多房间</h5>
+                                        <h6 class="card-subtitle">{{data.room_now_id_m|safe}}</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-hover text-center" id="table-rank-up">
+                                    <thead class="bg-white">
+                                        <tr>
+                                            <th>房间号</th>
+                                            <th>温度Max</th>
+                                            <th>温度Min</th>
+                                            <th>温度不合格数</th>
+                                            <th>温度合格数</th>
+                                            <th>合格率</th>
+                                            <th>湿度Max</th>
+                                            <th>湿度Min</th>
+                                            <th>湿度不合格数</th>
+                                            <th>湿度合格数</th>
+                                            <th>合格率</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for s in data.multiple %}
+                                            <tr>
+                                                <td><a href="?roomid={{s.l|safe}}&time={{data.date|safe}}">{{s.a|safe}}</a></td>
+                                                <td><span class="wd-max">{{s.b|safe}}</span></td>
+                                                <td><span class="wd-min ">{{s.c|safe}}</span></td>
+                                                <td><span class="text-dark">{{s.d|safe}}</span></td>
+                                                <td><span class="text-dark">{{s.e|safe}}</span></td>
+                                                <td><span class="wd_rate">{{s.f|safe}}</span></td>
+                                                <td><span class="sd-max">{{s.g|safe}}</span></td>
+                                                <td><span class="sd-min">{{s.h|safe}}</span></td>
+                                                <td><span class="text-dark">{{s.i|safe}}</span></td>
+                                                <td><span class="text-dark">{{s.j|safe}}</span></td>
+                                                <td><span class="text-dark">{{s.k|safe}}</span></td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/jquery-3.2.1.min.js"></script>
+    <script src="/static/js/jquery.freezeheader.js"></script>
+    <script src="/static/js/echarts.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/pages.js"></script>
+    <script src="/static/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="/static/bower_components/moment/min/moment.min.js"></script>
+    <script src="/static/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <script src="/static/bower_components/select2/dist/js/select2.full.min.js"></script>
+    <script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(freezeRankTableHeade());
+    var myChart = echarts.init(document.getElementById('echarts'));
+    var rew_datet = {{data.rew_date|safe}}
+    var rew_wdt= {{data.rew_wd|safe}}
+    var res_sdt = {{data.res_sd|safe}}
+    var wd_boxt = {{data.wd_box|safe}}
+    var sd_boxt = {{data.sd_box|safe}}
+    var wsd_boxt = {{data.wsd_box|safe}}
+    </script>
+    <script src="/static/js/wsdchart.js"></script>
+    <script>
+      $(function () {
+        //Date range picker 时间选择
+        $('#reservation').daterangepicker(
+          {
+            autoUpdateInput: true,  //填充时间
+            startDate: '2019-11-15',  //开始时间
+            endDate  : '2020-01-02',  // 填充的结束时间
+            fromLabel: "开始时间",
+            toLabel: "结束时间",
+            locale:
+            {
+              format: 'YYYY-MM-DD',
+              applyLabel: '确定', //确定按钮文本
+              cancelLabel: '取消', //取消按钮文本
+              daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+              monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                '七月', '八月', '九月', '十月', '十一月', '十二月'
+              ],
+            }
+          });
+      //Initialize Select2 Elements
+       $('.select2').select2()
+      });
+    </script>
+    <!-- select2 -->
+    <script>
+    var roomid = {{ data.roomid|safe }};
+
+
+    $(function () {
+    $('#roomid').select2({
+    data: roomid,
+    });
+    });
+    </script>
+
+</body>
+</html>

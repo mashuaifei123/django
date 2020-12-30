@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}专题进展{% endblock %}
+
+{% block css %}
+     <link rel="stylesheet" href="{% static 'DataTables/DataTables-1.10.20/css/dataTables.bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'DataTables/Buttons-1.6.1/css/buttons.dataTables.css' %}">
+{% endblock %}
+
+{% block breadcrumb %}
+<!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        专题进展
+        <small>studys</small>
+      </h1>
+    </section>
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">专题进展<small>(Info_list)</small></h3>
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="row">
+              <form action="search" method="GET" class="form-group">
+                <div class="col-xs-2">
+                  <label>&nbsp&nbsp专题编号</label>
+                  <input type="text" name="q" class="form-control" placeholder="输入专题编号索搜...">
+                </div>
+                <div class="col-xs-2">
+                  <label>&nbsp试验结束日期搜索</label>
+                  <input type="text" name="date" class="form-control pull-right" id="reservation"
+                    placeholder="输入一个日期范围索搜...">
+                </div>
+                <div class="col-xs-1">
+                  <label>&nbsp&nbsp专题负责人</label>
+                  <input type="text" name="sd" class="form-control pull-right" id="reservation"
+                    placeholder="请输入SD索搜...">
+                </div>
+                <div class="col-xs-1">
+                    <label></label>
+                  <span class="input-group-btn">
+                    <button type="submit" id="search-btn" class="btn btn-flat"><i class="fa fa-search"> 查询</i>
+                    </button>
+                  </span>
+                </div>
+              </form>
+            </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="overflow-x:auto; white-space:nowrap">
+          <table id="assets_table" class="table table-bordered table-striped table-hover"></table>
+        </div>
+        <div class="box-body" style="overflow-x:auto">
+          <table id="sum_table" class="table table-bordered table-striped"></table>
+        </div>
+        <div class="col-xs-6">
+        <div class="callout callout-info">
+            <h4>Tip!</h4>
+            <p>计划：按照试验结束日期自动生成<br> 预计：结合实际进度与预制规则预判日期,上一级如存在时间则启用规则<br>实际：实际的进展日期请注意不要空时间一定需要填写<br>
+              默认填充过去一年及未来一年时间<br>
+            <label class="label label-default">灰色：</label> 未填写数据或者未匹配.<br>
+            <label class="label label-success">绿色：</label> 符合预期结果完成.<br>
+            <label class="label label-warning">橙色：</label> 未达到预期目标<br>
+            </p>
+          </div>
+        </div>
+        <!-- /.box-body -->
+      </div>
+      <!-- /.box -->
+    </div>
+    <!-- /.col -->
+    </div>
+    <!-- /.row -->
+  </section>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'DataTables/DataTables-1.10.20/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'DataTables/DataTables-1.10.20/js/dataTables.bootstrap.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'adminlet-2.4.10/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/dataTables.buttons.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/buttons.flash.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/buttons.html5.js' %}"></script>
+<script src="{% static 'DataTables/Buttons-1.6.1/js/buttons.print.js' %}"></script>
+
+<script>
+  $(function () {
+    //Date range picker 时间选择
+    $('#reservation').daterangepicker(
+      { 
+        autoUpdateInput: true,  //填充时间
+        startDate: moment().subtract(365, 'days'),  //开始时间
+        endDate  : moment().subtract(-365, 'days'),  // 填充的结束时间
+        fromLabel: "开始时间",
+        toLabel: "结束时间",
+        locale:
+        {
+          format: 'YYYY-MM-DD',
+          applyLabel: '确定', //确定按钮文本
+          cancelLabel: '取消', //取消按钮文本
+          daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+          monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+            '七月', '八月', '九月', '十月', '十一月', '十二月'
+          ],
+        }
+      })
+  });
+</script>
+
+<script>
+var dataSet = {{ studysdata|safe }};
+var columns = {{ columnstitle|safe }};
+
+$(function () {
+  var table = $('#assets_table').DataTable({
+          "buttons": [
+              {
+              extend: 'copy',
+              text: '复制到剪切板',
+              },
+              {
+              extend: 'csv',
+              text: '导出为CSV文件',
+              },
+          ], <!-- 导出文件按钮设定 -->
+          "data": dataSet,
+          "columns": columns,
+          "paging": true,       <!-- 允许分页 -->
+          "lengthChange": true, <!-- 允许改变每页显示的行数 -->
+          "searching": true,    <!-- 允许内容搜索 -->
+          "ordering": true,     <!-- 允许排序 -->
+          "info": true,         <!-- 显示信息 -->
+          "autoWidth": false,   <!-- 固定宽度 -->
+          <!--"scrollX": true,      <!-- 超长列滚动 -->-->
+          "fixedColumns":{ 
+          "leftColumns": 2,
+          "rightColumns": 1
+                           },   <!-- 这个是用来固定列的 -->
+          "lengthMenu": [ [9, 15, 21, -1], [9, 15, 21, "所有"] ], <!-- 显示数量菜单 -->
+          "displayLength": 9,   <!-- 默认显示数量 -->
+          "language": {
+            "search": "当前列表搜索:",
+            "searchPlaceholder": "请输入要搜索内容...",
+            "pagingType": 'full',
+            "processing": "处理中...",
+	          "lengthMenu": "显示 _MENU_ 项结果",
+	          "zeroRecords": "没有找到相应的结果",
+	          "info": "第 _START_ 至 _END_ 行，共 _TOTAL_ 行",
+	          "infoEmpty": "第 0 至 0 项结果，共 0 项",
+	          "infoFiltered": "(由 _MAX_ 项结果过滤)",
+            "paginate": {
+    	        "first": "首页",
+              "previous": "上一页",
+              "next": "下一页",
+              "last": "末尾页"
+           }
+          }
+        });
+        table.buttons().container().appendTo($(table.table().container() )); <!-- 把按钮挂在那里 --> 
+      });
+
+</script>
+
+{% endblock %}
