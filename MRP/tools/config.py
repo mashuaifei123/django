@@ -1,15 +1,15 @@
 '''pristima 数据库地址配置'''
-sqlserver = "74prodsql.kunshan.cti-cert.com"
-service_name = "PATHTOX.kunshan.cticert.com"
-appserverservlet =  r'74prodapp.kunshan.cti-cert.com/74papp'
+sqlserver = ".kunshan.cti-cert.com"
+service_name = ".kunshan.cticert.com"
+appserverservlet =  r'.kunshan.cti-cert.com/74papp'
 sqluser = "PTS_Server"
 sqlpw = "pts_password"
 
 '''pristima API 服务器地址配置'''
-ptsAPIserverUrl = 'http://74psavanteapi.kunshan.cti-cert.com/74papi/servlet/PtsAPIServlet'
-ptsUserNameID = 'Admin'
-ptsUserPassword = 'dsfafdsa'
-ptsDeviceID = '1909'
+ptsAPIserverUrl = 'http://.kunshan.cti-cert.com/74papi/servlet/PtsAPIServlet'
+ptsUserNameID = ''
+ptsUserPassword = ''
+ptsDeviceID = ''
 
 '''临检申请单函数参数设定'''
 # 仪器过滤列表
