@@ -5,7 +5,7 @@ import json
 
 class WeChat:
     def __init__(self):
-        self.CORPID = 'ww31f12b15e58c1b05'  #企业ID，在管理后台获取
+        self.CORPID = ''  #企业ID，在管理后台获取
         self.CORPSECRET = 'H5slR0jzWlhtxkGmSt1o5AF0mKpTJoixDaVPwvJ1W2s'#自建应用的Secret，每个自建应用里都有单独的secret
         self.AGENTID = '1000058'  #应用ID，在后台应用中获取
         # self.TOUSER = "17610|39262"  # 接收者用户名,多个用户用|分割
