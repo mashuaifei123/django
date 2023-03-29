@@ -3,14 +3,13 @@
 本脚本用于导出临检骨髓系统报表用于SEND转换。LB_BW
 用户 王琳 李胜
 前置条件 数据库服务器开机,账号密码链接成功.
-by rock 
 """
 import pymssql
 import os
 import pandas as pd
 
 db_port = '1433'
-db_host = '10.10.92.52'
+db_host = ''
 db_user = 'jedaread'
 db_pwd = 'jedaread'
 db_name = 'RMSGS-new'
